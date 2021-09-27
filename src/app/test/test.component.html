@@ -1,0 +1,19 @@
+<p>test works!</p>
+<h1>
+    {{myname}}
+</h1>
+<h3 [ngStyle]="massgeStyles"> Multiple style binding </h3>
+<!-- event bainding  -->
+<h1>{{event}}</h1>
+<button (click)="showMessage($event)"> Log Message </button>
+<!-- to way data binding  -->
+<p>
+    <input type="text" [(ngModel)]="name">
+    name: {{name}}
+</p>
+<!-- template reference variabal -->
+<p>
+    <input type="test" #myInput name='' id=''>
+    <br>
+    <button (click)="submitButton(myInput.value)">Submit</button> Submit </button>
+</p>
