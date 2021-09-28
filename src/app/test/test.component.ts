@@ -15,6 +15,10 @@ fontStyle: 'italic',
   };
   public event ='';
   public name :string = '';
+  public show =false;
+  public showC = false;
+  public color = 'red'; 
+  public items =['red', 'green', 'blue'];
   
   constructor() { }
 
@@ -24,6 +28,10 @@ fontStyle: 'italic',
 this.event = event.type;
   }
   submitButton(value:any){
+    console.log(value);
+  }
+
+  submitBtn(value:any){
     console.log(value);
   }
 }

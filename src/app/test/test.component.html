@@ -12,8 +12,56 @@
     name: {{name}}
 </p>
 <!-- template reference variabal -->
-<p>
+<!-- <p>
     <input type="test" #myInput name='' id=''>
     <br>
     <button (click)="submitButton(myInput.value)">Submit</button> Submit </button>
+</p> -->
+<!-- ngfor , ngswitch & ngif -->
+
+<h1>ngif</h1>
+
+<ng-container *ngIf="show; else elseTemplate">
+    <p> ng If section </p>
+</ng-container>
+<ng-template #elseTemplate>
+    <p> ng else section </p>
+</ng-template>
+<button (click)="show=!show"> Toggle show </button>
+
+<!-- <h3 *ngIf="show"> ng if section   </h3> -->
+
+<ng-container *ngIf="show; then thenTemplate; else elseTemplate"></ng-container>
+<ng-template #thenTemplate>
+    <p> ng then section </p>
+</ng-template>
+<ng-template #elseTemplate>
+    <p>ng else section </p>
+    
+</ng-template>
+
+<br>
+<button (click)="show=!show"> Toggle show </button>
+
+<h1> ng switch </h1>
+<span [ngSwitch]="color">
+<p *ngSwitchCase="'red'">
+This is red color 
 </p>
+<p *ngSwitchCase="'blue'">
+
+    This is blue color
+
+</p>
+<p *ngSwitchDefault>
+    This is a default color 
+
+</p>
+</span>
+<button (click)="showC=!showC"> Toggle show </button>
+
+<h1> ng for section </h1>
+
+<ul *ngFor="let item of items;first as f">
+    <li *ngIf="f"> {{item}}</li>
+</ul>
